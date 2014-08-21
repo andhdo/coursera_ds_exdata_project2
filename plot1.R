@@ -1,3 +1,5 @@
+# see complete source code at: https://github.com/andhdo/coursera_ds_exdata_project2
+
 plot1 <- function() {
   
   # be sure to load the files and precomputations
@@ -13,6 +15,7 @@ plot1 <- function() {
   
   #precomputations
   
+  # key sections are (1) the aggregated data
   processed_ds <- aggregate(Emissions ~ year, data=NEI, sum)
   
   
@@ -21,6 +24,7 @@ plot1 <- function() {
   png(filename=target_file, width=480,height=480,units="px")
   
   # process information to produce graphic
+  # key sections are (2) the usage of base-plotting-system
   plot( processed_ds, type="b", xlab = "Year", ylab = "PM")
   
   

@@ -1,3 +1,5 @@
+# see complete source code at: https://github.com/andhdo/coursera_ds_exdata_project2
+
 plot3 <- function() {
   
   # be sure to load the files and precomputations
@@ -16,6 +18,7 @@ plot3 <- function() {
   
   #precomputations
   
+  # wee need to load ggplot2 library and include the type inside the dataset
   subsetNEI = subset(NEI, fips==24510) # NEI[NEI$fips=="24510",]
   
   processed_ds <- aggregate(Emissions ~ year + type, data=subsetNEI, sum)
@@ -25,6 +28,7 @@ plot3 <- function() {
   png(filename=target_file, width=480,height=480,units="px")
   
   # process information to produce graphic
+  # ...and use ggplot to load the graphic, using the color as aesthetic feature to show emission types.
   g <- ggplot(processed_ds, aes(x=year, y=Emissions, group=type, colour=type))
   g <- g + geom_point() + geom_line()
   g <- g + xlab("Year") + ylab("PM") + ggtitle("Emissions in Baltimore [1999..2008]")
