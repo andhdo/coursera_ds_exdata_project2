@@ -24,8 +24,8 @@ download_raw_package <- function() {
 }
 
 install_required_packages <- function() {
-  #if(!require("sqldf")) {
-  #  install.packages("sqldf")
+  #if(!require("ggplot2")) {
+  #  install.packages("ggplot2")
   #}
   
 }
@@ -53,7 +53,7 @@ load_data_nei <- function() {
 	  NEI <- readRDS(dataset_filename)
   }
   else{
-	# skip
+	  # skip
   }
   NEI
 }
@@ -67,7 +67,7 @@ load_data_scc <- function() {
 	  SCC <- readRDS(dataset_filename)
   }
   else{
-	# skip
+	  # skip
   }
   SCC
 }
